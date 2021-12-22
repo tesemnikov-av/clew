@@ -1,0 +1,11 @@
+FROM centos
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+COPY app.py app.py 
+COPY huggingface_model/ huggingface_model/
+
+RUN yum -y install python3.8
+RUN python3 -m pip install --upgrade pip 
+RUN pip3 install -r requirements.txt
