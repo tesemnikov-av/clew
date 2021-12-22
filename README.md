@@ -14,3 +14,15 @@ This application groups all text events up to the specified time and identifies 
 - Huggingface
 - Hdbscan
 - Torch
+
+# Usage
+
+```bash
+>> egrep -vi "Created slice|Removed slice|Started Session" /var/log/messages > /clew/messages
+
+```
+```python
+>> event2vec = Event2Vec(len_timestamp=LEN_TIMESTAMP, date_time_str='2021-12-07 13:00:00')
+>> event2vec.look(logfile="/clew/messages")
+2021-12-07 13:52:19	<abnormal message>
+```
